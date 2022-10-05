@@ -1,0 +1,69 @@
+{
+  "name": "react-vis-ts",
+  "version": "1.0.0",
+  "description": "",
+  "main": "./dist/cjs/index.js",
+  "module": "./dist/esm/index.js",
+  "types": "./dist/esm/index.d.ts",
+  "scripts": {
+    "build": "npm run build:esm && npm run build:cjs",
+    "build:esm": "tsc",
+    "build:cjs": "tsc --module commonjs --outDir dist/cjs",
+    "lint": "eslint \"{**/*,*}.{js,ts,jsx,tsx}\"",
+    "lint-fix": "eslint \"{**/*,*}.{js,ts,jsx,tsx}\" --fix",
+    "prepare": "npm run build",
+    "prepublishOnly": "npm run lint"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GraceLR/React-vis-ts.git"
+  },
+  "peerDependencies": {
+    "react": ">=16"
+  },
+  "files": [
+    "dist",
+    "LICENSE",
+    "README.md"
+  ],
+  "keywords": [
+    "react",
+    "typescript",
+    "vis",
+    "graph",
+    "visualization"
+  ],
+  "author": "Grace Li (GraceLR)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/GraceLR/React-vis-ts/issues"
+  },
+  "homepage": "https://github.com/GraceLR/React-vis-ts#readme",
+  "dependencies": {
+    "@testing-library/jest-dom": "^5.16.5",
+    "@testing-library/react": "^13.4.0",
+    "@testing-library/user-event": "^13.5.0",
+    "@types/jest": "^27.5.2",
+    "@types/node": "^16.11.64",
+    "@types/react": "^18.0.21",
+    "@types/react-dom": "^18.0.6",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-scripts": "5.0.1",
+    "typescript": "^4.8.4",
+    "vis-data": "^7.1.2",
+    "vis-network": "^9.1.2",
+    "web-vitals": "^2.1.4"
+  },
+  "devDependencies": {
+    "@types/lodash": "^4.14.186",
+    "@typescript-eslint/eslint-plugin": "^5.39.0",
+    "@typescript-eslint/parser": "^5.39.0",
+    "eslint": "^8.24.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "eslint-plugin-react": "^7.31.8",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "prettier": "^2.7.1"
+  }
+}

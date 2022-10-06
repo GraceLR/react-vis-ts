@@ -9,9 +9,9 @@ This repo is the example of the article ["How to create and publish React Typesc
 
 You can clone it and step by step create your own NPM package and publish it.
 
-It is simple React counter.
+It is a React graph.
 
-[**Live Demo**](https://gapon2401.github.io/my-react-typescript-package/)
+[**Live Demo**](https://GraceLR.github.io/react-vis-ts/)
 
 ## Installation:
 

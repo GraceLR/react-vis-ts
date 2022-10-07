@@ -18,8 +18,9 @@ function DemoGraph() {
       { from: 2, to: 5 },
     ],
   });
-  const [selectedNode, setSelectedNode] =
-    (useState < number) | (undefined > undefined);
+  const [selectedNode, setSelectedNode] = useState<number | undefined>(
+    undefined
+  );
   const createNode = (x: number, y: number, nodeId: number | undefined) => {
     if (nodeId === undefined) {
       alert("Please select a node.");
@@ -62,7 +63,7 @@ function DemoGraph() {
     },
     edges: {
       color: "#000000",
-      length: "200",
+      // length: "20vw",
       smooth: { enabled: true, type: "dynamic" },
     },
   };

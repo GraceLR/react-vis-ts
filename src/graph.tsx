@@ -7,18 +7,14 @@ import differenceWith from 'lodash/differenceWith';
 import intersectionWith from 'lodash/intersectionWith';
 
 const diff = (current: any, next: any, field = 'id') => {
-  // consider caching this value between updates
   const nextIds = new Set(next.map((item: any) => item[field]));
   const removed = current.filter((item: any) => !nextIds.has(item[field]));
-
   const unchanged = intersectionWith(next, current, isEqual);
-
   const updated = differenceWith(
     intersectionWith(next, current, (a: any, b: any) => a[field] === b[field]),
     unchanged,
     isEqual,
   );
-
   const added = differenceWith(differenceWith(next, current, isEqual), updated, isEqual);
 
   return {
@@ -30,6 +26,7 @@ const diff = (current: any, next: any, field = 'id') => {
 };
 
 function Graph(props: any) {
+  // type fix
   const container = React.useRef<HTMLDivElement>(null);
   const [nodes] = useState(new DataSet());
   const [edges] = useState(new DataSet());
@@ -37,7 +34,6 @@ function Graph(props: any) {
 
   if (container.current) {
     if (netWork) {
-      // netWork.off();
       const events = props.events || {};
       for (const eventName of Object.keys(events)) {
         netWork.off(eventName as NetworkEvents);
@@ -96,7 +92,7 @@ function Graph(props: any) {
         },
         options,
       );
-      setNetWork((_prev: any) => netWork);
+      setNetWork((_prev) => netWork);
     }
   }, [container.current]);
 

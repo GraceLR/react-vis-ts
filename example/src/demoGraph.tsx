@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import Graph from 'react-vis-ts';
-
 // maybe able to import the types of nodes and edges
 
 function DemoGraph() {
@@ -20,7 +19,7 @@ function DemoGraph() {
       { from: 2, to: 5 },
     ],
   });
-  const [selectedNode, setSelectedNode] = useState(undefined);
+  const [selectedNode, setSelectedNode] = useState<number | undefined>(undefined);
   const createNode = (x: number, y: number, nodeId: number | undefined) => {
     if (nodeId === undefined) {
       alert('Please select a node.');
@@ -29,10 +28,8 @@ function DemoGraph() {
     setGraph(({ counter, nodes, edges }) => {
       const id = counter - 1;
       const from = nodeId;
-
       const node = { id, label: `${id}`, x, y };
       const edge = { from, to: id, label: 'added' };
-
       return {
         counter: id,
         nodes: [...nodes, node],
@@ -43,7 +40,7 @@ function DemoGraph() {
   const events = {
     select: (selected: any) => {
       if (!selected.event.srcEvent.shiftKey) {
-        setSelectedNode((_prev: any) => selected.nodes[0]);
+        setSelectedNode((_prev) => selected.nodes[0]);
       }
     },
     click: (properties: any) => {

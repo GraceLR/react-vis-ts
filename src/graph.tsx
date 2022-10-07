@@ -33,7 +33,7 @@ function Graph(props: any) {
   const container = React.useRef<HTMLDivElement>(null);
   const [nodes] = useState(new DataSet());
   const [edges] = useState(new DataSet());
-  const [netWork, setNetWork] = useState<any>(undefined);
+  const [netWork, setNetWork] = useState<Network | undefined>(undefined);
 
   if (container.current) {
     if (netWork) {

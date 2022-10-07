@@ -63,7 +63,7 @@ function DemoGraph() {
     },
     edges: {
       color: "#000000",
-      // length: "20vw",
+      // length: "200",
       smooth: { enabled: true, type: "dynamic" },
     },
   };

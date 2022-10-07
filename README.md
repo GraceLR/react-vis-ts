@@ -5,11 +5,8 @@
 ![npm-typescript]
 [![License][github-license]][github-license-url]
 
-This repo is the example of the article ["How to create and publish React Typescript npm package with demo and automated build"](https://medium.com/@igaponov/how-to-create-and-publish-react-typescript-npm-package-with-demo-and-automated-build-80c40ec28aca).
-
-You can clone it and step by step create your own NPM package and publish it.
-
-It is a React graph.
+This repo is for react-vis-ts.
+It is a React graph in typescript.
 
 [**Live Demo**](https://GraceLR.github.io/react-vis-ts/)
 
@@ -18,13 +15,6 @@ It is a React graph.
 ```bash
 npm install react-vis-ts --save-dev
 ```
-
-or
-
-```bash
-yarn add -D react-vis-ts
-```
-
 ## Usage :
 
 Add `Graph` to your component:

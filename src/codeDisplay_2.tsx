@@ -1,7 +1,14 @@
-import React, { useState } from "react";
+import React from "react";
+
+function CodeDisplay_2() {
+  return (
+    <div style={{ background: "#ADD8E6" }}>
+      <pre>
+        <code>
+          {`import React, { useState } from "react";
 import Graph from "react-vis-ts";
 
-function DemoGraph() {
+function DemoGraph_2() {
   const [graph, setGraph] = useState({
     counter: 0,
     nodes: [
@@ -29,7 +36,7 @@ function DemoGraph() {
     setGraph(({ counter, nodes, edges }) => {
       const id = counter - 1;
       const from = nodeId;
-      const node = { id, label: `${id}`, x, y };
+      const node = { id, label: \`\${id}\`, x, y };
       const edge = { from, to: id, label: "added" };
       return {
         counter: id,
@@ -40,11 +47,13 @@ function DemoGraph() {
   };
   const events = {
     select: (selected: any) => {
+      // type fix
       if (!selected.event.srcEvent.shiftKey) {
         setSelectedNode((_prev) => selected.nodes[0]);
       }
     },
     click: (properties: any) => {
+      // type fix
       if (properties.event.srcEvent.shiftKey) {
         createNode(
           properties.pointer.canvas.x,
@@ -63,7 +72,6 @@ function DemoGraph() {
     },
     edges: {
       color: "#000000",
-      // length: "200",
       smooth: { enabled: true, type: "dynamic" },
     },
   };
@@ -73,9 +81,16 @@ function DemoGraph() {
         graph={graph}
         options={options}
         events={events}
-        style={{ height: "640px" }}
+        style={{ height: "440px" }}
       />
     </>
   );
 }
-export default DemoGraph;
+export default DemoGraph_2;     
+        `}
+        </code>
+      </pre>
+    </div>
+  );
+}
+export default CodeDisplay_2;

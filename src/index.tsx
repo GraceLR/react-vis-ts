@@ -1,13 +1,16 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import DemoGraph from "./demoGraph";
+import CodeDisplay_1 from "./codeDisplay_1";
+import CodeDisplay_2 from "./codeDisplay_2";
+import DemoGraph_1 from "./demoGraph_1";
+import DemoGraph_2 from "./demoGraph_2";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
 );
 root.render(
   <React.StrictMode>
-    <div style={{ width: "600px", margin: "20px auto" }}>
+    <div style={{ width: "95%", margin: "20px auto" }}>
       <h1>react-vis-ts</h1>
       <h2>This is the Demo of using react-vis-ts.</h2>
       <a href="https://github.com/GraceLR/react-vis-ts">
@@ -17,8 +20,33 @@ root.render(
         />
         {` `}View on GitHub
       </a>
-      <div>
-        <DemoGraph />
+      <div style={{ display: "flex" }}>
+        <div>
+          <h3>Example 1:</h3>
+          <DemoGraph_1 />
+        </div>
+        <div>
+          <h3>Source code:</h3>
+          <CodeDisplay_1 />
+        </div>
+      </div>
+      <div style={{ display: "flex" }}>
+        <div>
+          <h3>Example 2:</h3>
+          <DemoGraph_2 />
+        </div>
+        <div>
+          <div>
+            <h3>Events:</h3>
+            <h4 style={{ background: "#E5E4E2" }}>
+              Add node: presee 'click + shift' after selecting a node
+            </h4>
+          </div>
+          <div>
+            <h3>Source code:</h3>
+            <CodeDisplay_2 />
+          </div>
+        </div>
       </div>
     </div>
   </React.StrictMode>

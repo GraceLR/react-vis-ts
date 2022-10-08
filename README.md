@@ -21,7 +21,7 @@ Add `Graph` to your component:
 
 Example 1:
 
-```js
+```ts
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import Graph from 'react-vis-ts'
@@ -68,7 +68,7 @@ root.render(
 
 Example 2:
 
-```js
+```ts
 import React, { useState } from 'react';
 import Graph from 'react-vis-ts';
 

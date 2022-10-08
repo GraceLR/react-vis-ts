@@ -1,8 +1,6 @@
 import React from "react";
 import Graph from "react-vis-ts";
 
-// comments fix
-
 function DemoGraph_1() {
   const graph = {
     nodes: [

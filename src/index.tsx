@@ -10,14 +10,14 @@ const root = ReactDOM.createRoot(
 );
 root.render(
   <React.StrictMode>
-    <div style={{ display: "flex", flexDirection: "column", gap: "3vw" }}>
+    <div style={{ display: "flex", flexDirection: "column" }}>
       <div
         style={{
           display: "flex",
           alignItems: "center",
           gap: "5vw",
           backgroundColor: "#ADD8E6",
-          marginTop: "1.5vw",
+          paddingLeft: "1vw",
         }}
       >
         <h1>react-vis-ts</h1>
@@ -29,7 +29,7 @@ root.render(
           {` `}View on GitHub
         </a>
       </div>
-      <div style={{ display: "flex", backgroundColor: "#ECFFDC" }}>
+      <div style={{ display: "flex", paddingLeft: "1vw" }}>
         <div>
           <h3>Example 1:</h3>
           <DemoGraph_1 />
@@ -37,7 +37,7 @@ root.render(
         <div>
           <div>
             <h3>Events:</h3>
-            <ul style={{ background: "#AFE1AF" }}>
+            <ul>
               <li>Select a node or an edge - click on the node or edge.</li>
             </ul>
           </div>
@@ -47,7 +47,7 @@ root.render(
           </div>
         </div>
       </div>
-      <div style={{ display: "flex", backgroundColor: "#ECFFDC" }}>
+      <div style={{ display: "flex", paddingLeft: "1vw" }}>
         <div>
           <h3>Example 2:</h3>
           <DemoGraph_2 />
@@ -55,7 +55,7 @@ root.render(
         <div>
           <div>
             <h3>Events:</h3>
-            <ul style={{ background: "#AFE1AF" }}>
+            <ul>
               <li>Select a node or an edge - click on the node or edge.</li>
               <li>
                 Add a node and an edge - presee 'click + shift' after selecting

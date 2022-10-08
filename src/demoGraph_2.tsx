@@ -1,11 +1,8 @@
 import React, { useState } from "react";
 import Graph from "react-vis-ts";
 
-// comments fix
-
 function DemoGraph_2() {
   const [graph, setGraph] = useState({
-    counter: 0,
     nodes: [
       { id: 1, label: "Node 1" },
       { id: 2, label: "Node 2" },
@@ -28,10 +25,10 @@ function DemoGraph_2() {
       alert("Please select a node.");
       return;
     }
-    setGraph(({ counter, nodes, edges }) => {
-      const id = counter - 1;
+    setGraph(({ nodes, edges }) => {
+      const id = nodes.length + 1;
       const from = nodeId;
-      const node = { id, label: `${id}`, x, y };
+      const node = { id, label: `Node ${id}`, x, y };
       const edge = { from, to: id, label: "added" };
       return {
         counter: id,
@@ -76,7 +73,7 @@ function DemoGraph_2() {
         graph={graph}
         options={options}
         events={events}
-        style={{ height: "640px" }}
+        style={{ height: "440px" }}
       />
     </>
   );

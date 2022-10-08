@@ -38,14 +38,14 @@ function DemoGraph_2() {
     });
   };
   const events = {
+    // The underline Network library doesn't provide types for events so
+    // we are forced to use any here.
     select: (selected: any) => {
-      // type fix
       if (!selected.event.srcEvent.shiftKey) {
         setSelectedNode((_prev) => selected.nodes[0]);
       }
     },
     click: (properties: any) => {
-      // type fix
       if (properties.event.srcEvent.shiftKey) {
         createNode(
           properties.pointer.canvas.x,

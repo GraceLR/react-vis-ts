@@ -10,13 +10,19 @@ const root = ReactDOM.createRoot(
 );
 root.render(
   <React.StrictMode>
-    <div style={{ display: "flex", flexDirection: "column" }}>
+    <div
+      style={{
+        display: "flex",
+        flexDirection: "column",
+        fontFamily: "Helvetica",
+      }}
+    >
       <div
         style={{
           display: "flex",
           alignItems: "center",
           gap: "5vw",
-          backgroundColor: "#ADD8E6",
+          backgroundColor: "#A7C7E7",
           paddingLeft: "1vw",
         }}
       >

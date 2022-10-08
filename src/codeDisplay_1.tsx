@@ -1,11 +1,9 @@
 import React from "react";
+import SyntaxHighlighter from "react-syntax-highlighter";
+import { dracula } from "react-syntax-highlighter/dist/esm/styles/hljs";
 
 function CodeDisplay_1() {
-  return (
-    <div style={{ background: "#ADD8E6" }}>
-      <pre>
-        <code>
-          {`import React from "react";
+  const code = `import React from "react";
 import Graph from "react-vis-ts";
 
 function DemoGraph_1() {
@@ -43,11 +41,9 @@ function DemoGraph_1() {
     </>
   );
 }
-export default DemoGraph_1;
-        `}
-        </code>
-      </pre>
-    </div>
+export default DemoGraph_1;`;
+  return (
+    <SyntaxHighlighter children={code} language="javascript" style={dracula} />
   );
 }
 export default CodeDisplay_1;

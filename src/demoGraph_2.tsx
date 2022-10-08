@@ -68,14 +68,12 @@ function DemoGraph_2() {
     },
   };
   return (
-    <>
-      <Graph
-        graph={graph}
-        options={options}
-        events={events}
-        style={{ height: "440px" }}
-      />
-    </>
+    <Graph
+      graph={graph}
+      options={options}
+      events={events}
+      style={{ height: "440px" }}
+    />
   );
 }
 export default DemoGraph_2;

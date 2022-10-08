@@ -30,10 +30,6 @@ function DemoGraph_1() {
       smooth: { enabled: true, type: "dynamic" },
     },
   };
-  return (
-    <>
-      <Graph graph={graph} options={options} style={{ height: "640px" }} />
-    </>
-  );
+  return <Graph graph={graph} options={options} style={{ height: "640px" }} />;
 }
 export default DemoGraph_1;

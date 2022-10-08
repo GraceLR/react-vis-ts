@@ -16,6 +16,7 @@ root.render(
         flexDirection: "column",
         fontFamily: "Helvetica",
         color: "#212F3D",
+        fontSize: "120%",
       }}
     >
       <div

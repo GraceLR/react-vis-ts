@@ -15,6 +15,7 @@ root.render(
         display: "flex",
         flexDirection: "column",
         fontFamily: "Helvetica",
+        color: "#212F3D",
       }}
     >
       <div

@@ -7,6 +7,7 @@ import "./codeCopy.css";
 
 function CodeDisplay_2(props: {
   setCopiedTwo: React.Dispatch<React.SetStateAction<any>>;
+  setCopiedOne: React.Dispatch<React.SetStateAction<any>>;
 }) {
   const code = `import React, { useState } from "react";
 import Graph from "react-vis-ts";
@@ -91,7 +92,13 @@ export default DemoGraph_2;
   return (
     <div className="parentDiv">
       <div className="buttonDiv">
-        <CopyToClipboard text={code} onCopy={() => props.setCopiedTwo(true)}>
+        <CopyToClipboard
+          text={code}
+          onCopy={() => {
+            props.setCopiedTwo(true);
+            props.setCopiedOne(false);
+          }}
+        >
           <FaRegCopy />
         </CopyToClipboard>
       </div>

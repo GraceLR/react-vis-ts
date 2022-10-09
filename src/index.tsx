@@ -1,7 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import Example_1 from "./example_1";
-import Example_2 from "./example_2";
+import Demo from "./demo";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
@@ -35,8 +34,7 @@ root.render(
           {` `}View on GitHub
         </a>
       </div>
-      <Example_1 />
-      <Example_2 />
+      <Demo />
     </div>
   </React.StrictMode>
 );

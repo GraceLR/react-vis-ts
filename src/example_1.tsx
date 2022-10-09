@@ -1,9 +1,12 @@
-import React, { useState } from "react";
+import React from "react";
 import DemoGraph_1 from "./demoGraph_1";
 import CodeDisplay_1 from "./codeDisplay_1";
 
-function Example_1() {
-  const [copiedOne, setCopiedOne] = useState(false);
+function Example_1(props: {
+  copiedOne: boolean;
+  setCopiedOne: React.Dispatch<React.SetStateAction<any>>;
+  setCopiedTwo: React.Dispatch<React.SetStateAction<any>>;
+}) {
   return (
     <div style={{ display: "flex", paddingLeft: "1vw" }}>
       <div>
@@ -20,11 +23,14 @@ function Example_1() {
         <div>
           <div style={{ display: "flex", alignItems: "center", gap: "1vw" }}>
             <h3>Source code:</h3>
-            {copiedOne && (
+            {props.copiedOne && (
               <span style={{ color: "green" }}>Copied to clipboard!</span>
             )}
           </div>
-          <CodeDisplay_1 setCopiedOne={setCopiedOne} />
+          <CodeDisplay_1
+            setCopiedOne={props.setCopiedOne}
+            setCopiedTwo={props.setCopiedTwo}
+          />
         </div>
       </div>
     </div>

@@ -1,14 +1,18 @@
 import React from "react";
 import SyntaxHighlighter from "react-syntax-highlighter";
 import { dracula } from "react-syntax-highlighter/dist/esm/styles/hljs";
+import { CopyToClipboard } from "react-copy-to-clipboard";
+import { FaRegCopy } from "react-icons/fa";
+import "./codeCopy.css";
 
-function CodeDisplay_2() {
+function CodeDisplay_2(props: {
+  setCopiedTwo: React.Dispatch<React.SetStateAction<any>>;
+}) {
   const code = `import React, { useState } from "react";
 import Graph from "react-vis-ts";
 
 function DemoGraph_2() {
   const [graph, setGraph] = useState({
-    counter: 0,
     nodes: [
       { id: 1, label: "Node 1" },
       { id: 2, label: "Node 2" },
@@ -31,10 +35,10 @@ function DemoGraph_2() {
       alert("Please select a node.");
       return;
     }
-    setGraph(({ counter, nodes, edges }) => {
-      const id = counter - 1;
+    setGraph(({ nodes, edges }) => {
+      const id = nodes.length + 1;
       const from = nodeId;
-      const node = { id, label: \`\${id}\`, x, y };
+      const node = { id, label: \`Node \${id}\`, x, y };
       const edge = { from, to: id, label: "added" };
       return {
         counter: id,
@@ -44,14 +48,14 @@ function DemoGraph_2() {
     });
   };
   const events = {
+    // The underlined Network library doesn't provide types for events so
+    // we are forced to use any here.
     select: (selected: any) => {
-      // type fix
       if (!selected.event.srcEvent.shiftKey) {
         setSelectedNode((_prev) => selected.nodes[0]);
       }
     },
     click: (properties: any) => {
-      // type fix
       if (properties.event.srcEvent.shiftKey) {
         createNode(
           properties.pointer.canvas.x,
@@ -74,19 +78,29 @@ function DemoGraph_2() {
     },
   };
   return (
-    <>
-      <Graph
-        graph={graph}
-        options={options}
-        events={events}
-        style={{ height: "440px" }}
-      />
-    </>
+    <Graph
+      graph={graph}
+      options={options}
+      events={events}
+      style={{ height: "740px" }}
+    />
   );
 }
-export default DemoGraph_2;`;
+export default DemoGraph_2;
+  `;
   return (
-    <SyntaxHighlighter children={code} language="javascript" style={dracula} />
+    <div className="parentDiv">
+      <div className="buttonDiv">
+        <CopyToClipboard text={code} onCopy={() => props.setCopiedTwo(true)}>
+          <FaRegCopy />
+        </CopyToClipboard>
+      </div>
+      <SyntaxHighlighter
+        children={code}
+        language="javascript"
+        style={dracula}
+      />
+    </div>
   );
 }
 export default CodeDisplay_2;

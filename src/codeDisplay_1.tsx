@@ -1,8 +1,13 @@
 import React from "react";
 import SyntaxHighlighter from "react-syntax-highlighter";
 import { dracula } from "react-syntax-highlighter/dist/esm/styles/hljs";
+import { CopyToClipboard } from "react-copy-to-clipboard";
+import { FaRegCopy } from "react-icons/fa";
+import "./codeCopy.css";
 
-function CodeDisplay_1() {
+function CodeDisplay_1(props: {
+  setCopiedOne: React.Dispatch<React.SetStateAction<any>>;
+}) {
   const code = `import React from "react";
 import Graph from "react-vis-ts";
 
@@ -37,13 +42,24 @@ function DemoGraph_1() {
   };
   return (
     <>
-      <Graph graph={graph} options={options} style={{ height: "440px" }} />
+      <Graph graph={graph} options={options} style={{ height: "640px" }} />
     </>
   );
 }
 export default DemoGraph_1;`;
   return (
-    <SyntaxHighlighter children={code} language="javascript" style={dracula} />
+    <div className="parentDiv">
+      <div className="buttonDiv">
+        <CopyToClipboard text={code} onCopy={() => props.setCopiedOne(true)}>
+          <FaRegCopy />
+        </CopyToClipboard>
+      </div>
+      <SyntaxHighlighter
+        children={code}
+        language="javascript"
+        style={dracula}
+      />
+    </div>
   );
 }
 export default CodeDisplay_1;

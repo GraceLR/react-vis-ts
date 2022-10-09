@@ -16,6 +16,7 @@
   "license": "MIT",
   "devDependencies": {
     "@types/react": "^18.0.21",
+    "@types/react-copy-to-clipboard": "^5.0.4",
     "@types/react-dom": "^18.0.6",
     "@typescript-eslint/eslint-plugin": "^5.39.0",
     "@typescript-eslint/parser": "^5.39.0",
@@ -32,6 +33,8 @@
   },
   "dependencies": {
     "@types/react-syntax-highlighter": "^15.5.5",
+    "react-copy-to-clipboard": "^5.1.0",
+    "react-icons": "^4.4.0",
     "react-syntax-highlighter": "^15.5.0"
   }
 }

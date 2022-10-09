@@ -38,7 +38,7 @@ function DemoGraph_2() {
     });
   };
   const events = {
-    // The underline Network library doesn't provide types for events so
+    // The underlined Network library doesn't provide types for events so
     // we are forced to use any here.
     select: (selected: any) => {
       if (!selected.event.srcEvent.shiftKey) {
@@ -72,7 +72,7 @@ function DemoGraph_2() {
       graph={graph}
       options={options}
       events={events}
-      style={{ height: "440px" }}
+      style={{ height: "740px" }}
     />
   );
 }

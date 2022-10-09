@@ -1,9 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import CodeDisplay_1 from "./codeDisplay_1";
-import CodeDisplay_2 from "./codeDisplay_2";
-import DemoGraph_1 from "./demoGraph_1";
-import DemoGraph_2 from "./demoGraph_2";
+import Example_1 from "./example_1";
+import Example_2 from "./example_2";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
@@ -37,46 +35,8 @@ root.render(
           {` `}View on GitHub
         </a>
       </div>
-      <div style={{ display: "flex", paddingLeft: "1vw" }}>
-        <div>
-          <h3>Example 1:</h3>
-          <DemoGraph_1 />
-        </div>
-        <div>
-          <div>
-            <h3>Events:</h3>
-            <ul>
-              <li>Select a node or an edge - click on the node or edge.</li>
-            </ul>
-          </div>
-          <div>
-            <h3>Source code:</h3>
-            <CodeDisplay_1 />
-          </div>
-        </div>
-      </div>
-      <div style={{ display: "flex", paddingLeft: "1vw" }}>
-        <div>
-          <h3>Example 2:</h3>
-          <DemoGraph_2 />
-        </div>
-        <div>
-          <div>
-            <h3>Events:</h3>
-            <ul>
-              <li>Select a node or an edge - click on the node or edge.</li>
-              <li>
-                Add a node and an edge - presee 'click + shift' after selecting
-                a node.
-              </li>
-            </ul>
-          </div>
-          <div>
-            <h3>Source code:</h3>
-            <CodeDisplay_2 />
-          </div>
-        </div>
-      </div>
+      <Example_1 />
+      <Example_2 />
     </div>
   </React.StrictMode>
 );

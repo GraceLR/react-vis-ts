@@ -22,65 +22,57 @@ Add `Graph` to your component:
 Example 1:
 
 ```ts
-import React from 'react'
-import ReactDOM from 'react-dom/client'
-import Graph from 'react-vis-ts'
+import React from "react";
+import Graph from "react-vis-ts";
 
-const graph = {
-  nodes: [
-    { id: 1, label: 'Node 1', title: 'node 1 tootip text' },
-    { id: 2, label: 'Node 2', title: 'node 2 tootip text' },
-    { id: 3, label: 'Node 3', title: 'node 3 tootip text' },
-    { id: 4, label: 'Node 4', title: 'node 4 tootip text' },
-    { id: 5, label: 'Node 5', title: 'node 5 tootip text' },
-  ],
-  edges: [
-    { from: 1, to: 2 },
-    { from: 1, to: 3 },
-    { from: 2, to: 4 },
-    { from: 2, to: 5 },
-  ],
-};
-const options = {
-  layout: {
-    hierarchical: false,
-  },
-  nodes: {
-    widthConstraint: { minimum: 50 },
-  },
-  edges: {
-    color: '#000000',
-    length: '200',
-    smooth: { enabled: true, type: 'dynamic' },
-  },
-};
-
-const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement)
-root.render(
-    <React.StrictMode>
-      <div>
-        <Graph graph={graph} options={options} style={{ height: '640px' }} />
-      </div>
-    </React.StrictMode>,
-)
-
+function DemoGraph_1() {
+  const graph = {
+    nodes: [
+      { id: 1, label: "Node 1", title: "node 1 tootip text" },
+      { id: 2, label: "Node 2", title: "node 2 tootip text" },
+      { id: 3, label: "Node 3", title: "node 3 tootip text" },
+      { id: 4, label: "Node 4", title: "node 4 tootip text" },
+      { id: 5, label: "Node 5", title: "node 5 tootip text" },
+    ],
+    edges: [
+      { from: 1, to: 2 },
+      { from: 1, to: 3 },
+      { from: 2, to: 4 },
+      { from: 2, to: 5 },
+    ],
+  };
+  const options = {
+    layout: {
+      hierarchical: false,
+    },
+    nodes: {
+      widthConstraint: { minimum: 50 },
+    },
+    edges: {
+      color: "#000000",
+      // length: "200",
+      smooth: { enabled: true, type: "dynamic" },
+    },
+  };
+  return <Graph graph={graph} options={options} style={{ height: "640px" }} />;
+}
+export default DemoGraph_1;
 ```
 
 Example 2:
 
 ```ts
-import React, { useState } from 'react';
-import Graph from 'react-vis-ts';
+import React, { useState } from "react";
+import Graph from "react-vis-ts";
 
-function DemoGraph() {
+function DemoGraph_2() {
   const [graph, setGraph] = useState({
-    counter: 0,
     nodes: [
-      { id: 1, label: 'Node 1' },
-      { id: 2, label: 'Node 2' },
-      { id: 3, label: 'Node 3' },
-      { id: 4, label: 'Node 4' },
-      { id: 5, label: 'Node 5' },
+      { id: 1, label: "Node 1" },
+      { id: 2, label: "Node 2" },
+      { id: 3, label: "Node 3" },
+      { id: 4, label: "Node 4" },
+      { id: 5, label: "Node 5" },
     ],
     edges: [
       { from: 1, to: 2 },
@@ -89,17 +81,19 @@ function DemoGraph() {
       { from: 2, to: 5 },
     ],
   });
-  const [selectedNode, setSelectedNode] = (useState < number) | (undefined > undefined);
+  const [selectedNode, setSelectedNode] = useState<number | undefined>(
+    undefined
+  );
   const createNode = (x: number, y: number, nodeId: number | undefined) => {
     if (nodeId === undefined) {
-      alert('Please select a node.');
+      alert("Please select a node.");
       return;
     }
-    setGraph(({ counter, nodes, edges }) => {
-      const id = counter - 1;
+    setGraph(({ nodes, edges }) => {
+      const id = nodes.length + 1;
       const from = nodeId;
-      const node = { id, label: `${id}`, x, y };
-      const edge = { from, to: id, label: 'added' };
+      const node = { id, label: `Node ${id}`, x, y };
+      const edge = { from, to: id, label: "added" };
       return {
         counter: id,
         nodes: [...nodes, node],
@@ -108,6 +102,8 @@ function DemoGraph() {
     });
   };
   const events = {
+    // The underlined Network library doesn't provide types for events so
+    // we are forced to use any here.
     select: (selected: any) => {
       if (!selected.event.srcEvent.shiftKey) {
         setSelectedNode((_prev) => selected.nodes[0]);
@@ -115,7 +111,11 @@ function DemoGraph() {
     },
     click: (properties: any) => {
       if (properties.event.srcEvent.shiftKey) {
-        createNode(properties.pointer.canvas.x, properties.pointer.canvas.y, selectedNode);
+        createNode(
+          properties.pointer.canvas.x,
+          properties.pointer.canvas.y,
+          selectedNode
+        );
       }
     },
   };
@@ -127,18 +127,20 @@ function DemoGraph() {
       widthConstraint: { minimum: 50 },
     },
     edges: {
-      color: '#000000',
-      length: '200',
-      smooth: { enabled: true, type: 'dynamic' },
+      color: "#000000",
+      smooth: { enabled: true, type: "dynamic" },
     },
   };
   return (
-    <>
-      <Graph graph={graph} options={options} events={events} style={{ height: '640px' }} />
-    </>
+    <Graph
+      graph={graph}
+      options={options}
+      events={events}
+      style={{ height: "740px" }}
+    />
   );
 }
-export default DemoGraph;
+export default DemoGraph_2;
 ```
 
 [npm-url]: https://www.npmjs.com/package/react-vis-ts

@@ -1,0 +1,17 @@
+.parentDiv {
+  position: relative;
+}
+
+.buttonDiv {
+  color: #f0f8ff;
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  overflow: visible;
+}
+
+.buttonDiv:hover {
+  color: #00f;
+}
+
+/*# sourceMappingURL=index.1ae07ef4.css.map */

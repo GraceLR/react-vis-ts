@@ -1,0 +1,1 @@
+{"mappings":"AAAA;;;;AAGA;;;;;;;;AAOA","sources":["src/codeCopy.css"],"sourcesContent":[".parentDiv {\n  position: relative;\n}\n.buttonDiv {\n  position: absolute;\n  right: 14px;\n  top: 14px;\n  overflow: visible;\n  color: aliceblue;\n}\n.buttonDiv:hover {\n  color: blue;\n}\n"],"names":[],"version":3,"file":"index.1ae07ef4.css.map","sourceRoot":"/__parcel_source_root/"}

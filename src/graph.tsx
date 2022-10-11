@@ -16,7 +16,6 @@ const diff = (current: any, next: any, field = 'id') => {
     isEqual,
   );
   const added = differenceWith(differenceWith(next, current, isEqual), updated, isEqual);
-
   return {
     removed,
     unchanged,
@@ -26,12 +25,10 @@ const diff = (current: any, next: any, field = 'id') => {
 };
 
 function Graph(props: any) {
-  // type fix
   const container = React.useRef<HTMLDivElement>(null);
   const [nodes] = useState(new DataSet());
   const [edges] = useState(new DataSet());
   const [netWork, setNetWork] = useState<Network | undefined>(undefined);
-
   if (container.current) {
     if (netWork) {
       const events = props.events || {};
@@ -40,7 +37,6 @@ function Graph(props: any) {
         netWork.on(eventName as NetworkEvents, events[eventName]);
       }
     }
-
     const nodesChange = !isEqual(nodes.get(), props.graph.nodes);
     if (nodesChange) {
       const idIsEqual = (n1: any, n2: any) => n1.id === n2.id;
@@ -54,13 +50,11 @@ function Graph(props: any) {
     const edgesChange = !isEqual(edges.get(), props.graph.edges);
     if (edgesChange) {
       const { removed: edgesRemoved, added: edgesAdded, updated: edgesChanged } = diff(edges.get(), props.graph.edges);
-
       edges.remove(edgesRemoved);
       edges.update(edgesChanged);
       edges.add(edgesAdded);
     }
   }
-
   useEffect(() => {
     if (container.current) {
       const defaultOptions = {
@@ -80,8 +74,6 @@ function Graph(props: any) {
           },
         },
       };
-
-      // merge user provied options with our default ones
       const options = defaultsDeep(defaultOptions, props.options);
       const netWork = new Network(
         container.current,
@@ -95,9 +87,7 @@ function Graph(props: any) {
       setNetWork((_prev) => netWork);
     }
   }, [container.current]);
-
   const style = { width: '100%', height: '100%', ...props.style };
-
   return <div ref={container} style={style} />;
 }
 

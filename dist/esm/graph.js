@@ -8,7 +8,6 @@ import differenceWith from 'lodash/differenceWith';
 import intersectionWith from 'lodash/intersectionWith';
 var diff = function (current, next, field) {
     if (field === void 0) { field = 'id'; }
-    // consider caching this value between updates
     var nextIds = new Set(next.map(function (item) { return item[field]; }));
     var removed = current.filter(function (item) { return !nextIds.has(item[field]); });
     var unchanged = intersectionWith(next, current, isEqual);
@@ -28,7 +27,6 @@ function Graph(props) {
     var _a = useState(undefined), netWork = _a[0], setNetWork = _a[1];
     if (container.current) {
         if (netWork) {
-            // netWork.off();
             var events = props.events || {};
             for (var _i = 0, _b = Object.keys(events); _i < _b.length; _i++) {
                 var eventName = _b[_i];
@@ -73,7 +71,6 @@ function Graph(props) {
                     }
                 }
             };
-            // merge user provied options with our default ones
             var options = defaultsDeep(defaultOptions, props.options);
             var netWork_1 = new Network(container.current, __assign(__assign({}, props.graph), { edges: edges, nodes: nodes }), options);
             setNetWork(function (_prev) { return netWork_1; });

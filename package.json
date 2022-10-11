@@ -1,6 +1,6 @@
 {
   "name": "react-vis-ts",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "A typescript and react wrapper for vis-network.",
   "main": "./dist/cjs/graph.js",
   "module": "./dist/esm/graph.js",

@@ -1,6 +1,8 @@
 import React from "react";
+
 import DemoGraph_2 from "./demoGraph_2";
 import CodeDisplay_2 from "./codeDisplay_2";
+import "./styles.css";
 
 function Example_2(props: {
   copiedTwo: boolean;
@@ -8,12 +10,12 @@ function Example_2(props: {
   setCopiedOne: React.Dispatch<React.SetStateAction<any>>;
 }) {
   return (
-    <div style={{ display: "flex", paddingLeft: "1vw" }}>
-      <div>
+    <div className="exampleContainer">
+      <div className="exampleLeft">
         <h3>Example 2:</h3>
         <DemoGraph_2 />
       </div>
-      <div>
+      <div className="exampleRight">
         <div>
           <h3>Events:</h3>
           <ul>
@@ -25,7 +27,7 @@ function Example_2(props: {
           </ul>
         </div>
         <div>
-          <div style={{ display: "flex", alignItems: "center", gap: "1vw" }}>
+          <div className="message">
             <h3>Source code:</h3>
             {props.copiedTwo && (
               <span style={{ color: "green" }}>Copied to clipboard!</span>

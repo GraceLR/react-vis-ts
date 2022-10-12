@@ -3,7 +3,7 @@ import SyntaxHighlighter from "react-syntax-highlighter";
 import { dracula } from "react-syntax-highlighter/dist/esm/styles/hljs";
 import { CopyToClipboard } from "react-copy-to-clipboard";
 import { FaRegCopy } from "react-icons/fa";
-import "./codeCopy.css";
+import "./styles.css";
 
 function CodeDisplay_1(props: {
   setCopiedOne: React.Dispatch<React.SetStateAction<any>>;

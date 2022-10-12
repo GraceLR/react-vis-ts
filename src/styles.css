@@ -1,0 +1,44 @@
+.page {
+  display: flex;
+  flex-direction: column;
+  font-family: Helvetica;
+  color: #212f3d;
+  font-size: 120%;
+  width: auto;
+}
+.header {
+  display: flex;
+  align-items: center;
+  gap: 5vw;
+  background-color: #a7c7e7;
+  padding-left: 1vw;
+}
+.exampleContainer {
+  display: flex;
+  padding-left: 1vw;
+}
+.exampleLeft {
+  flex-basis: 50%;
+  flex-shrink: 0;
+}
+.exampleRight {
+  overflow: auto;
+}
+.message {
+  display: flex;
+  align-items: center;
+  gap: 1vw;
+}
+.parentDiv {
+  position: relative;
+}
+.buttonDiv {
+  position: absolute;
+  right: 14px;
+  top: 14px;
+  overflow: visible;
+  color: aliceblue;
+}
+.buttonDiv:hover {
+  color: blue;
+}

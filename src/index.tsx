@@ -1,30 +1,16 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
+
 import Demo from "./demo";
+import "./styles.css";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
 );
 root.render(
   <React.StrictMode>
-    <div
-      style={{
-        display: "flex",
-        flexDirection: "column",
-        fontFamily: "Helvetica",
-        color: "#212F3D",
-        fontSize: "120%",
-      }}
-    >
-      <div
-        style={{
-          display: "flex",
-          alignItems: "center",
-          gap: "5vw",
-          backgroundColor: "#A7C7E7",
-          paddingLeft: "1vw",
-        }}
-      >
+    <div className="page">
+      <div className="header">
         <h1>react-vis-ts</h1>
         <a href="https://github.com/GraceLR/react-vis-ts">
           <img
